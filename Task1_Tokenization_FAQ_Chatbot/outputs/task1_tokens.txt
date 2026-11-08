@@ -1,0 +1,45 @@
+case                         | original                 | tokens
+
+[punctuation] original='AI, search!'
+   whitespace: ['AI,', 'search!'] 2
+   word-like : ['AI', 'search'] 2
+
+[contraction (straight ')] original="I can't log in."
+   whitespace: ['I', "can't", 'log', 'in.'] 4
+   word-like : ['I', 'can', 't', 'log', 'in'] 5
+
+[contraction (curly ’)] original='I can’t log in.'
+   whitespace: ['I', 'can’t', 'log', 'in.'] 4
+   word-like : ['I', 'can', 't', 'log', 'in'] 5
+
+[email] original='help@example.com'
+   whitespace: ['help@example.com'] 1
+   word-like : ['help', 'example', 'com'] 3
+
+[course code + version] original='CS4944 version 2.1'
+   whitespace: ['CS4944', 'version', '2.1'] 3
+   word-like : ['CS4944', 'version', '2', '1'] 4
+
+[empty string] original=''
+   whitespace: [] 0
+   word-like : [] 0
+
+[Urdu] original='یہ ایک مثال ہے'
+   whitespace: ['یہ', 'ایک', 'مثال', 'ہے'] 4
+   word-like : ['یہ', 'ایک', 'مثال', 'ہے'] 4
+
+[identifier/file name] original='CS4944_42365_Lab6.pdf'
+   whitespace: ['CS4944_42365_Lab6.pdf'] 1
+   word-like : ['CS4944_42365_Lab6', 'pdf'] 2
+
+Normalization risk (original kept separately from the search copy):
+   "I can't log in." -> 'i cant log in'
+   'CS4944 version 2.1' -> 'cs4944 version 21'
+   'help@example.com' -> 'helpexamplecom'
+
+Model sub-word tokens (all-MiniLM-L6-v2 WordPiece tokenizer):
+   [punctuation] 'AI, search!': ['ai', ',', 'search', '!'] (4 sub-words, 6 ids incl. [CLS]/[SEP])
+   [contraction (straight ')] "I can't log in.": ['i', 'can', "'", 't', 'log', 'in', '.'] (7 sub-words, 9 ids incl. [CLS]/[SEP])
+   [email] 'help@example.com': ['help', '@', 'example', '.', 'com'] (5 sub-words, 7 ids incl. [CLS]/[SEP])
+   [course code + version] 'CS4944 version 2.1': ['cs', '##49', '##44', 'version', '2', '.', '1'] (7 sub-words, 9 ids incl. [CLS]/[SEP])
+   [Urdu] 'یہ ایک مثال ہے': ['ی', '##ہ', 'ا', '##ی', '##ک', 'م', '##ث', '##ا', '##ل', 'ہ', '##ے'] (11 sub-words, 13 ids incl. [CLS]/[SEP])
