@@ -1,0 +1,59 @@
+Backend: tfidf
+it:sentence:0 score=0.343
+A forgotten password can be reset using the recovery link.
+assessment:sentence:0 score=0.000
+Assignments are uploaded through the learning portal.
+Backend: embedding
+it:sentence:0 score=0.526
+A forgotten password can be reset using the recovery link.
+assessment:sentence:0 score=0.021
+Assignments are uploaded through the learning portal.
+
+======================================================================
+Query: I was unwell, can I get more time for my assignment? | expected document: handbook_late
+  [tfidf]
+   1. handbook_late:sentence:1 score=0.181 chars 161-342 <- expected doc
+      evidence: Each assignment brief states a deadline date and time, and the learning portal records the exact moment a file is received. Late submission is penalized at 10% ...
+   2. it_password:sentence:2 score=0.104 chars 364-597 
+      evidence: Never share recovery codes, one-time passwords or verification links with anyone, including people who claim to be IT staff. After five failed sign-in attempts ...
+   3. handbook_late:sentence:3 score=0.101 chars 488-695 <- expected doc
+      evidence: Requests that arrive after the deadline are treated as late submissions unless the student was admitted to hospital. Dr. Khan, the assessment officer, reviews m...
+  [embedding]
+   1. handbook_late:sentence:3 score=0.380 chars 488-695 <- expected doc
+      evidence: Requests that arrive after the deadline are treated as late submissions unless the student was admitted to hospital. Dr. Khan, the assessment officer, reviews m...
+   2. handbook_late:sentence:2 score=0.339 chars 343-487 <- expected doc
+      evidence: However, a student with a documented illness may request an extension if medical evidence is sent to the module coordinator before the deadline.
+   3. handbook_late:sentence:1 score=0.331 chars 161-342 <- expected doc
+      evidence: Each assignment brief states a deadline date and time, and the learning portal records the exact moment a file is received. Late submission is penalized at 10% ...
+======================================================================
+Query: I can't remember how to sign in to my account | expected document: it_password
+  [tfidf]
+   1. it_password:sentence:2 score=0.253 chars 364-597 <- expected doc
+      evidence: Never share recovery codes, one-time passwords or verification links with anyone, including people who claim to be IT staff. After five failed sign-in attempts ...
+   2. it_password:sentence:0 score=0.208 chars 0-159 <- expected doc
+      evidence: IT Help Guide: Account Access (synthetic teaching text). Your university account gives access to email, the learning portal, library services and campus Wi-Fi.
+   3. it_password:sentence:3 score=0.158 chars 598-763 <- expected doc
+      evidence: If the account is still locked after 15 minutes, or if you no longer have access to your personal email, visit the IT service desk in Block C with your student ...
+  [embedding]
+   1. it_password:sentence:1 score=0.542 chars 160-363 <- expected doc
+      evidence: If you forget your password, reset a forgotten password using the recovery link on the login page; the link is sent to the personal email address registered dur...
+   2. it_password:sentence:4 score=0.503 chars 764-880 <- expected doc
+      evidence: Staff at the desk will verify your identity and issue a temporary password that must be changed at the next sign-in.
+   3. it_password:sentence:5 score=0.440 chars 881-1089 <- expected doc
+      evidence: Multi-factor authentication is mandatory for all accounts; register the authenticator app before the end of the first week of term. Contact the desk at it-help@...
+======================================================================
+Query: my printouts come out with nothing on them | expected document: printer_help
+  [tfidf]
+   1. handbook_late:sentence:2 score=0.160 chars 343-487 
+      evidence: However, a student with a documented illness may request an extension if medical evidence is sent to the module coordinator before the deadline.
+   2. it_password:sentence:3 score=0.127 chars 598-763 
+      evidence: If the account is still locked after 15 minutes, or if you no longer have access to your personal email, visit the IT service desk in Block C with your student ...
+   3. it_password:sentence:2 score=0.106 chars 364-597 
+      evidence: Never share recovery codes, one-time passwords or verification links with anyone, including people who claim to be IT staff. After five failed sign-in attempts ...
+  [embedding]
+   1. printer_help:sentence:1 score=0.528 chars 178-399 <- expected doc
+      evidence: For blank printer pages, check ink levels and run the cleaning utility from the printer menu, then print a test page afterwards. If the test page is still blank...
+   2. printer_help:sentence:0 score=0.439 chars 0-177 <- expected doc
+      evidence: Equipment Troubleshooting: Lab Printers and Scanners (synthetic teaching text). Warning: switch the printer off and wait for the fuser to cool before opening an...
+   3. printer_help:sentence:5 score=0.396 chars 980-1076 <- expected doc
+      evidence: Toner and ink cartridges are stored in the technician's office and are issued only by lab staff.
