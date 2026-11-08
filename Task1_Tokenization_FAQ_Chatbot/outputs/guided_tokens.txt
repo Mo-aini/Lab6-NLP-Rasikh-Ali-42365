@@ -1,0 +1,12 @@
+Original: "I can't submit CS4944 late!"
+  Whitespace: ['I', "can't", 'submit', 'CS4944', 'late!'] 5
+  Word-like: ['I', 'can', 't', 'submit', 'CS4944', 'late'] 6
+Original: 'rasikh.ali@example.edu'
+  Whitespace: ['rasikh.ali@example.edu'] 1
+  Word-like: ['rasikh', 'ali', 'example', 'edu'] 4
+Original: ''
+  Whitespace: [] 0
+  Word-like: [] 0
+Original: 'یہ ایک مثال ہے'
+  Whitespace: ['یہ', 'ایک', 'مثال', 'ہے'] 4
+  Word-like: ['یہ', 'ایک', 'مثال', 'ہے'] 4
