@@ -30,7 +30,6 @@ def aggressive_normalize(text):
     return re.sub(r"[^\w\s]", "", text.lower())
 
 
-print("%-28s | %-24s | %s" % ("case", "original", "tokens"))
 for label, text in samples:
     ws, words = whitespace_tokens(text), wordlike_tokens(text)
     print(f"\n[{label}] original={text!r}")

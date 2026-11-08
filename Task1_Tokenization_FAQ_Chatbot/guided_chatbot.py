@@ -35,7 +35,8 @@ def reply(engine, query):
     for r in FAQ:
         if query.strip().casefold() == r["question"].casefold():
             return r["answer"] + " [source: " + r["source"] + "]"
-    hits = engine.search(query)
+    # a TF-IDF score of 0 means no shared words, so it is not a real suggestion
+    hits = [(r, score) for r, score in engine.search(query) if score > 0]
     if not hits:
         return "No matching FAQ. Please contact the help desk."
     lines = ["Possible matches; choose or rephrase your question:"]

@@ -16,7 +16,7 @@ print("FAQ behaviour checks passed (", len(FAQ), "FAQs )\n")
 for query in ["How do I reset my password?",          # exact answer
               "What should I do if the printer prints blank pages?",  # added FAQ, exact
               "printer shows empty paper",            # suggestion response
-              "wifi not working",                     # suggestion response
+              "wifi not working",                     # no match: TF-IDF splits Wi-Fi into wi + fi
               "",                                     # empty input
               "volcano geology"]:                     # unsupported input
     print("You:", repr(query))
