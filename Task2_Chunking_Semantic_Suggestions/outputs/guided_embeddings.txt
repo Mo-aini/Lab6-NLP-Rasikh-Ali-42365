@@ -1,0 +1,13 @@
+Embedding shape: (3, 384)
+
+Query: How can I recover my login?
+0 0.627 Reset a forgotten password using the recovery link.
+1 0.072 Submit assignments through the learning portal.
+2 0.018 Check ink levels when a printer produces blank pages.
+
+Query: I do not need a password reset
+0 0.713 Reset a forgotten password using the recovery link.
+2 0.151 Check ink levels when a printer produces blank pages.
+1 0.1 Submit assignments through the learning portal.
+
+Zero-vector check: Zero vector: cosine similarity is undefined
