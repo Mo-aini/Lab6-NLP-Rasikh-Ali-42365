@@ -1,0 +1,7 @@
+handbook_late words: 215
+handbook_late_2023 words: 197
+it_password words: 191
+assignment_submission words: 177
+remote_work words: 177
+printer_help words: 181
+Created corpus.json and queries.json: 6 documents, 8 answerable and 2 unanswerable queries
