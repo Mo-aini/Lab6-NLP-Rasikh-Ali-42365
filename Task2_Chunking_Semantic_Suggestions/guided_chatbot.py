@@ -1,0 +1,64 @@
+"""6.6 Command line FAQ chatbot (manual reference + two added FAQs for Task 1).
+Run: python guided_chatbot.py [--backend tfidf|embedding]
+"""
+from lab6_search import Retriever
+
+FAQ = [
+    {"id": "faq:password", "question": "How do I reset my password?",
+     "answer": "Use the recovery link on the login page.",
+     "source": "it_help.txt"},
+    {"id": "faq:submit", "question": "Where do I submit my assignment?",
+     "answer": "Use the assignment upload page in the learning portal.",
+     "source": "assessment.txt"},
+    {"id": "faq:late", "question": "Can illness justify a late submission?",
+     "answer": "Request an extension with medical evidence before the deadline.",
+     "source": "handbook.txt"},
+    # Added for Task 1 (synthetic, sources are the synthetic guides in corpus.json)
+    {"id": "faq:wifi", "question": "How do I connect to campus Wi-Fi?",
+     "answer": "Sign in to the campus network with your university account username and password.",
+     "source": "it_password (corpus.json)"},
+    {"id": "faq:printer", "question": "What should I do if the printer prints blank pages?",
+     "answer": "Check ink levels, run the cleaning utility, then print a test page.",
+     "source": "printer_help (corpus.json)"},
+]
+
+
+def build_bot(backend="tfidf"):
+    records = [dict(r, text=r["question"] + " " + r["answer"]) for r in FAQ]
+    return Retriever(records, backend)
+
+
+def reply(engine, query):
+    if not query.strip():
+        return "Please enter a question."
+    # Only exact canonical FAQ text is answered automatically here.
+    for r in FAQ:
+        if query.strip().casefold() == r["question"].casefold():
+            return r["answer"] + " [source: " + r["source"] + "]"
+    hits = engine.search(query)
+    if not hits:
+        return "No matching FAQ. Please contact the help desk."
+    lines = ["Possible matches; choose or rephrase your question:"]
+    for r, score in hits:
+        lines.append(r["question"] + f" (similarity {score:.3f})")
+    return "\n".join(lines)
+
+
+if __name__ == "__main__":
+    import argparse
+    import sys
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--backend", choices=["tfidf", "embedding"], default="tfidf")
+    args = parser.parse_args()
+    engine = build_bot(args.backend)
+    print("FAQ assistant. Type exit to stop.")
+    while True:
+        try:
+            query = input("You: ")
+            if not sys.stdin.isatty():
+                print(query)  # echo piped input so saved transcripts are readable
+        except (EOFError, KeyboardInterrupt):
+            break
+        if query.strip().lower() == "exit":
+            break
+        print("Bot:", reply(engine, query))
