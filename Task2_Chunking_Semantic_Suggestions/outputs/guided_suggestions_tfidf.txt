@@ -1,0 +1,6 @@
+Suggested questions for 'assignment upload' (tfidf):
+   faq:submit | Where do I submit my assignment? (0.597)
+Suggested questions for 'forgot login' (tfidf):
+   faq:password | How do I reset my password? (0.328)
+Suggested questions for 'blank' (tfidf):
+   faq:printer | What should I do if the printer prints blank pages? (0.238)
