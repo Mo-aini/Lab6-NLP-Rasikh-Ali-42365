@@ -1,0 +1,28 @@
+===== 12-word budget | words in source: 19
+word windows | chunks: 2 | duplicate words: 4
+  0 73 'Late work is penalized. Illness may qualify for an extension when medical'
+  48 122 'an extension when medical evidence is provided. Ask the coordinator first.'
+sentence aware | chunks: 3 | duplicate words: 0
+  0 23 'Late work is penalized.'
+  24 95 'Illness may qualify for an extension when medical evidence is provided.'
+  96 122 'Ask the coordinator first.'
+===== 20-word budget | words in source: 19
+word windows | chunks: 1 | duplicate words: 0
+  0 122 'Late work is penalized. Illness may qualify for an extension when medical evidence is provided. Ask the coordinator first.'
+sentence aware | chunks: 1 | duplicate words: 0
+  0 122 'Late work is penalized. Illness may qualify for an extension when medical evidence is provided. Ask the coordinator first.'
+===== long sentence, 12-word budget | words in source: 51
+word windows | chunks: 6 | duplicate words: 20
+  0 73 'Late work is penalized. Illness may qualify for an extension when medical'
+  48 127 'an extension when medical evidence is provided. Ask the coordinator first. This'
+  100 175 'the coordinator first. This sentence keeps going without any full stop This'
+  157 223 'any full stop This sentence keeps going without any full stop This'
+  205 271 'any full stop This sentence keeps going without any full stop This'
+  253 315 'any full stop This sentence keeps going without any full stop.'
+sentence aware | chunks: 6 | duplicate words: 0
+  0 23 'Late work is penalized.'
+  24 95 'Illness may qualify for an extension when medical evidence is provided.'
+  96 122 'Ask the coordinator first.'
+  123 196 'This sentence keeps going without any full stop This sentence keeps going'
+  197 266 'without any full stop This sentence keeps going without any full stop'
+  267 315 'This sentence keeps going without any full stop.'
