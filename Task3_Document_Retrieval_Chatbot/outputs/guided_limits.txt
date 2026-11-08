@@ -1,0 +1,6 @@
+short | whitespace words: 3 | model tokens: 6 | limit: 256 | fits: True
+long | whitespace words: 300 | model tokens: 302 | limit: 256 | fits: False
+identifier | whitespace words: 3 | model tokens: 23 | limit: 256 | fits: True
+   subwords: ['cs', '##49', '##44', '_', '42', '##36', '##5', '_', 'lab', '##6', '.', 'pdf', 'post', '/', 'v', '##2', '/', 'token', '/', 'ref', '##resh']
+punctuation | whitespace words: 5 | model tokens: 16 | limit: 256 | fits: True
+   subwords: ['wait', '.', '.', '.', 'what', '?', '!', '(', 'really', ')', '-', '-', 'yes', '.']
