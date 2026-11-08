@@ -1,0 +1,21 @@
+FAQ assistant. Type exit to stop.
+You: How do I reset my password?
+Bot: Use the recovery link on the login page. [source: it_help.txt]
+You: I forgot my login details
+Bot: Possible matches; choose or rephrase your question:
+How do I reset my password? (similarity 0.575)
+How do I connect to campus Wi-Fi? (similarity 0.292)
+Where do I submit my assignment? (similarity 0.127)
+You: my printer and my wifi are both broken
+Bot: Possible matches; choose or rephrase your question:
+What should I do if the printer prints blank pages? (similarity 0.422)
+How do I reset my password? (similarity 0.198)
+How do I connect to campus Wi-Fi? (similarity 0.196)
+You: volcano geology
+Bot: Possible matches; choose or rephrase your question:
+Where do I submit my assignment? (similarity 0.071)
+How do I reset my password? (similarity 0.063)
+How do I connect to campus Wi-Fi? (similarity 0.044)
+You: 
+Bot: Please enter a question.
+You: exit
