@@ -1,0 +1,12 @@
+Suggested questions for 'assignment upload' (embedding):
+   faq:submit | Where do I submit my assignment? (0.671)
+   faq:late | Can illness justify a late submission? (0.086)
+   faq:wifi | How do I connect to campus Wi-Fi? (0.058)
+Suggested questions for 'forgot login' (embedding):
+   faq:password | How do I reset my password? (0.577)
+   faq:wifi | How do I connect to campus Wi-Fi? (0.278)
+   faq:late | Can illness justify a late submission? (0.103)
+Suggested questions for 'blank' (embedding):
+   faq:printer | What should I do if the printer prints blank pages? (0.389)
+   faq:submit | Where do I submit my assignment? (0.159)
+   faq:password | How do I reset my password? (0.115)
