@@ -1,0 +1,42 @@
+Boundary tests passed: empty text, short document (shorter than budget), invalid overlap x4, 95-word sentence -> 3 fallback windows, offsets == source
+
+Documents: {'handbook_late': 215, 'it_password': 191, 'printer_help': 181} total words: 587
+
+strategy    chunks     min_w    mean_w     max_w  dup_words labeled spans kept whole
+window/0        16        15      36.7        40          0 1/3 ['handbook_late']
+window/10       20        11      37.9        40        170 0/3 []
+sentence        21        12      28.0        40          0 1/3 ['it_password']
+
+--- 0: chunks of handbook_late (id, start, end, words, first/last words)
+  handbook_late:0:0              0   271  40  Assessment Handbook, Section 4 (version ... exact moment a file
+  handbook_late:0:1            272   514  40  is received. Late submission is ... Requests that arrive after
+  handbook_late:0:2            515   773  40  the deadline are treated as ... the student by university
+  handbook_late:0:3            774  1031  40  email. Because extension decisions depend ... read the brief carefully,
+  handbook_late:0:4           1032  1271  40  keep copies of every document ... or the word limit.
+  handbook_late:0:5           1272  1355  15  Group projects follow the same ... named in the request.
+
+--- 10: chunks of handbook_late (id, start, end, words, first/last words)
+  handbook_late:10:0             0   271  40  Assessment Handbook, Section 4 (version ... exact moment a file
+  handbook_late:10:1           216   443  40  and the learning portal records ... evidence is sent to
+  handbook_late:10:2           388   646  40  may request an extension if ... the assessment officer, reviews
+  handbook_late:10:3           579   845  40  was admitted to hospital. Dr. ... the evidence supplied, the
+  handbook_late:10:4           774  1031  40  email. Because extension decisions depend ... read the brief carefully,
+  handbook_late:10:5           964  1215  40  modules, students are strongly advised ... only the deadline; it
+  handbook_late:10:6          1154  1355  35  last day. An approved extension ... named in the request.
+
+--- sentence: chunks of handbook_late (id, start, end, words, first/last words)
+  handbook_late:sentence:0       0   160  21  Assessment Handbook, Section 4 (version ... in all undergraduate modules.
+  handbook_late:sentence:1     161   342  32  Each assignment brief states a ... the marks per day.
+  handbook_late:sentence:2     343   487  23  However, a student with a ... coordinator before the deadline.
+  handbook_late:sentence:3     488   695  31  Requests that arrive after the ... three working days, e.g.
+  handbook_late:sentence:4     696   780  14  a signed note from a ... student by university email.
+  handbook_late:sentence:5     781  1036  40  Because extension decisions depend on ... the brief carefully, keep
+  handbook_late:sentence:6    1037  1163  21  copies of every document they ... until the last day.
+  handbook_late:sentence:7    1164  1355  33  An approved extension changes only ... named in the request.
+
+Sentence-splitter failures (abbreviations):
+   [605:609] 'Dr.'
+   [609:696] 'Khan, the assessment officer, reviews medical evidence within three working days, e.g.'
+   [696:781] 'a signed note from a registered clinic, and informs the student by university email.'
+
+Longest sentence: 61 words (> 40 budget, uses window fallback)
