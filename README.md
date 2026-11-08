@@ -64,7 +64,7 @@ python task3_retrieval.py
 python document_chatbot.py
 ```
 
-**Results (my run):** sentence-aware chunks + embeddings gave the best result — test Hit@3 **1.0**, MRR@3 **0.875**.
+**Results (my run):** sentence-aware chunks + embeddings gave the best test result — Hit@3 **1.0**, MRR@3 **0.875**. The rule fixed on dev data (best dev MRR@3, then Hit@3, then fewer chunks) picked window-40/overlap-0 + embeddings because four configurations tied on dev, so that is the configuration `document_chatbot.py` loads from `selected_config.json`.
 
 | Strategy | Method | Chunks | Dev Hit@3 | Dev MRR@3 | Test Hit@3 | Test MRR@3 |
 |---|---|---|---|---|---|---|

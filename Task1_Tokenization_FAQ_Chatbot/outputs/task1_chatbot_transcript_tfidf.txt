@@ -5,7 +5,6 @@ You: password recovery
 Bot: Possible matches; choose or rephrase your question:
 How do I reset my password? (similarity 0.422)
 How do I connect to campus Wi-Fi? (similarity 0.110)
-Where do I submit my assignment? (similarity 0.000)
 You: 
 Bot: Please enter a question.
 You: volcano geology

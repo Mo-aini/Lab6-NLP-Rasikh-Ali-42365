@@ -9,8 +9,6 @@ Bot: Check ink levels, run the cleaning utility, then print a test page. [source
 You: 'printer shows empty paper'
 Bot: Possible matches; choose or rephrase your question:
 What should I do if the printer prints blank pages? (similarity 0.238)
-How do I reset my password? (similarity 0.000)
-Where do I submit my assignment? (similarity 0.000)
 
 You: 'wifi not working'
 Bot: No matching FAQ. Please contact the help desk.

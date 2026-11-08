@@ -1,4 +1,3 @@
-case                         | original                 | tokens
 
 [punctuation] original='AI, search!'
    whitespace: ['AI,', 'search!'] 2
